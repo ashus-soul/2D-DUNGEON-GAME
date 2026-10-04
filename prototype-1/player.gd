@@ -74,6 +74,14 @@ func _ready():
 		attack_damage = 10
 		attack_range = 380.0
 		scale=Vector2(3,3)
+
+	elif level_name == "RuincityBossGame":
+		SPEED = 800
+		JUMP_VELOCITY = -500
+		ROLL_SPEED = 1200
+		attack_damage = 10
+		attack_range = 380.0
+		scale=Vector2(3,3)
 		
 	elif level_name == "level2":
 		attack_range = 80.0

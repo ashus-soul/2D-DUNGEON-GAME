@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cs54ba4361we4" path="res://ui.tscn" id="4_3itbr"]
 [ext_resource type="Texture2D" uid="uid://cq5ot5tmjkt75" path="res://Tileset.png" id="5_hu0wr"]
 [ext_resource type="PackedScene" uid="uid://hawf3t1qoahj" path="res://player.tscn" id="6_mqhm1"]
-[ext_resource type="PackedScene" uid="uid://b5s0st3r2o72k" path="res://zombieruicity.tscn" id="10_zombie_ruin"]
+[ext_resource type="PackedScene" uid="uid://hjwb100vtky6" path="res://zombieruicity.tscn" id="10_zombie_ruin"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eq6nc"]
 texture = ExtResource("5_hu0wr")
@@ -1407,6 +1407,9 @@ distance = -300.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eq6nc"]
 size = Vector2(1309, 232)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xqxw"]
+size = Vector2(393, 1348)
+
 [node name="ruincity" type="Node2D" unique_id=910605102]
 position = Vector2(-3, 0)
 script = ExtResource("1_4xqxw")
@@ -1486,26 +1489,35 @@ position = Vector2(-3274, -111)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_eq6nc")
 
-[node name="Zombies" type="Node2D" parent="."]
+[node name="Zombies" type="Node2D" parent="." unique_id=806879407]
 
-[node name="ZombieRuinCity1" parent="Zombies" instance=ExtResource("10_zombie_ruin")]
-position = Vector2(-800, 310)
+[node name="ZombieRuinCity1" parent="Zombies" unique_id=161287754 instance=ExtResource("10_zombie_ruin")]
+position = Vector2(3989, 269)
+scale = Vector2(4, 4)
 
-[node name="ZombieRuinCity2" parent="Zombies" instance=ExtResource("10_zombie_ruin")]
-position = Vector2(-350, 310)
+[node name="ZombieRuinCity2" parent="Zombies" unique_id=1464135351 instance=ExtResource("10_zombie_ruin")]
+position = Vector2(1322, -341)
 
-[node name="ZombieRuinCity3" parent="Zombies" instance=ExtResource("10_zombie_ruin")]
-position = Vector2(100, 310)
+[node name="ZombieRuinCity3" parent="Zombies" unique_id=1564941295 instance=ExtResource("10_zombie_ruin")]
+position = Vector2(2870, 222)
 
-[node name="ZombieRuinCity4" parent="Zombies" instance=ExtResource("10_zombie_ruin")]
-position = Vector2(600, 310)
+[node name="ZombieRuinCity4" parent="Zombies" unique_id=1858526706 instance=ExtResource("10_zombie_ruin")]
+position = Vector2(6309, 167)
 
-[node name="ZombieRuinCity5" parent="Zombies" instance=ExtResource("10_zombie_ruin")]
-position = Vector2(1100, 310)
+[node name="ZombieRuinCity5" parent="Zombies" unique_id=1989679942 instance=ExtResource("10_zombie_ruin")]
+position = Vector2(1453, 257)
 
-[node name="ZombieRuinCity6" parent="Zombies" instance=ExtResource("10_zombie_ruin")]
+[node name="ZombieRuinCity6" parent="Zombies" unique_id=1145187903 instance=ExtResource("10_zombie_ruin")]
 position = Vector2(1600, 310)
 
-[node name="ZombieRuinCity7" parent="Zombies" instance=ExtResource("10_zombie_ruin")]
-position = Vector2(2000, 310)
+[node name="ZombieRuinCity7" parent="Zombies" unique_id=1163789573 instance=ExtResource("10_zombie_ruin")]
+position = Vector2(2599, 256)
 
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1327892609]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=599458979]
+position = Vector2(6540, -139)
+shape = SubResource("RectangleShape2D_4xqxw")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

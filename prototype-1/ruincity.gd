@@ -30,12 +30,12 @@ func _on_boss_died() -> void:
 		exit_area.visible = true
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
-	if boss_defeated and next_level:
-		var st = get_node_or_null("/root/SceneTransition")
-		if st:
-			st.change_scene_packed(next_level, 0.5)
+	if next_level:
+		if SceneTransition:
+			SceneTransition.change_scene_packed(next_level, 0.5)
 		else:
 			get_tree().change_scene_to_packed.call_deferred(next_level)
 
-func _on_detection_area_body_exited(_body: Node2D) -> void:
+
+func _on_detection_area_body_exited(body: Node2D) -> void:
 	print("area exited")

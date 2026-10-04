@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://2w8lhpb8ywha"]
+[gd_scene format=3 uid="uid://bcdx1t1pn1b4p"]
 
-[ext_resource type="Script" uid="uid://bud52y656ifa" path="res://level_1.gd" id="1_5hph3"]
-[ext_resource type="Texture2D" uid="uid://ly7aoi1j031h" path="res://free-vampires-locations-battle-background-pack/PNG/2/throne room.png" id="1_hn12h"]
-[ext_resource type="PackedScene" uid="uid://colw8skg85cpr" path="res://level_1_prolog.tscn" id="2_5hph3"]
-[ext_resource type="PackedScene" uid="uid://cs54ba4361we4" path="res://ui.tscn" id="2_ihfcg"]
-[ext_resource type="PackedScene" uid="uid://cielyiiadalby" path="res://boss_1.tscn" id="4_ihfcg"]
-[ext_resource type="PackedScene" uid="uid://hawf3t1qoahj" path="res://player.tscn" id="5_rka8t"]
+[ext_resource type="Script" uid="uid://bud52y656ifa" path="res://level_1.gd" id="1_hv2aq"]
+[ext_resource type="PackedScene" uid="uid://colw8skg85cpr" path="res://level_1_prolog.tscn" id="2_sb8en"]
+[ext_resource type="Texture2D" uid="uid://dqe62mf6jnbp2" path="res://post acalypt/background 1/orig_big.png" id="3_l3u2g"]
+[ext_resource type="PackedScene" uid="uid://cs54ba4361we4" path="res://ui.tscn" id="4_1hygw"]
+[ext_resource type="PackedScene" uid="uid://cxky7m7tqmlgj" path="res://ruincity_boss.tscn" id="5_2js2s"]
+[ext_resource type="PackedScene" uid="uid://hawf3t1qoahj" path="res://player.tscn" id="6_0k3a3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bnmub"]
 normal = Vector2(0.024940265, -0.999689)
@@ -17,24 +17,30 @@ size = Vector2(1309, 232)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hph3"]
 size = Vector2(94.5, 932)
 
-[node name="level1" type="Node2D" unique_id=1634577227]
-script = ExtResource("1_5hph3")
-next_level = ExtResource("2_5hph3")
+[node name="RuincityBossGame" type="Node2D" unique_id=1634577227]
+script = ExtResource("1_hv2aq")
+next_level = ExtResource("2_sb8en")
 
 [node name="kingcrownbg" type="Sprite2D" parent="." unique_id=785930921]
 texture_filter = 1
-position = Vector2(-52, 188)
-texture = ExtResource("1_hn12h")
-metadata/_edit_lock_ = true
+position = Vector2(-29.999908, 178.5)
+scale = Vector2(1.748264, 1.7569445)
+texture = ExtResource("3_l3u2g")
 
-[node name="UI" parent="." unique_id=614365459 instance=ExtResource("2_ihfcg")]
+[node name="UI" parent="." unique_id=614365459 instance=ExtResource("4_1hygw")]
 
 [node name="WorldBoundary" type="StaticBody2D" parent="." unique_id=1961277103]
 texture_filter = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary" unique_id=1100874424]
-position = Vector2(8, 22)
+position = Vector2(8, 655)
 shape = SubResource("WorldBoundaryShape2D_bnmub")
+
+[node name="player" parent="." unique_id=398429457 instance=ExtResource("6_0k3a3")]
+position = Vector2(-395, -16)
+
+[node name="ruincity_boss" parent="." unique_id=438823423 instance=ExtResource("5_2js2s")]
+position = Vector2(33, 219)
 
 [node name="WorldBoundary2" type="StaticBody2D" parent="." unique_id=159635451]
 texture_filter = 1
@@ -54,11 +60,6 @@ position = Vector2(-1077, -63)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_j6du0")
 
-[node name="Boss1" parent="." unique_id=173598566 instance=ExtResource("4_ihfcg")]
-texture_filter = 1
-position = Vector2(68.00001, -2.000002)
-scale = Vector2(10, 10)
-
 [node name="DetectionArea" type="Area2D" parent="." unique_id=1794464945]
 position = Vector2(-179, 0)
 collision_layer = 0
@@ -67,9 +68,6 @@ collision_mask = 130
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1513572837]
 position = Vector2(1866, 33)
 shape = SubResource("RectangleShape2D_5hph3")
-
-[node name="player" parent="." unique_id=398429457 instance=ExtResource("5_rka8t")]
-position = Vector2(-395, -16)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1684265427]
 position = Vector2(-40, 177)

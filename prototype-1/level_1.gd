@@ -1,7 +1,7 @@
 extends Node2D
 @export var next_level: PackedScene
 
-@onready var boss = $Boss1
+@onready var boss = $ruincity_boss
 @onready var exit_area = $DetectionArea if has_node("DetectionArea") else null
 
 var boss_defeated: bool = false
