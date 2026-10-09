@@ -244,12 +244,21 @@ texture_pressed = ExtResource("5_nrnbx")
 texture_hover = ExtResource("5_nrnbx")
 stretch_mode = 5
 
+[node name="TOUCH_CONTROLS" type="Button" parent="buttonmanager" unique_id=2064257627]
+layout_mode = 0
+offset_left = 950.0
+offset_top = 530.0
+offset_right = 1150.0
+offset_bottom = 570.0
+theme_override_font_sizes/font_size = 18
+text = "Touch Controls: ON"
+
 [node name="QUIT" type="TextureButton" parent="buttonmanager" unique_id=1612107699]
 layout_mode = 0
 offset_left = 563.0
-offset_top = 454.0
+offset_top = 460.0
 offset_right = 1587.0
-offset_bottom = 811.0
+offset_bottom = 817.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("6_iqepy")
 texture_pressed = ExtResource("7_h1wq0")
@@ -273,5 +282,6 @@ mouse_filter = 2
 [node name="Timer" type="Timer" parent="fadetransition" unique_id=46645441]
 
 [connection signal="pressed" from="buttonmanager/START" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="buttonmanager/TOUCH_CONTROLS" to="." method="_on_touch_controls_pressed"]
 [connection signal="pressed" from="buttonmanager/QUIT" to="." method="_on_quit_pressed"]
 [connection signal="timeout" from="fadetransition/Timer" to="." method="_on_timer_timeout"]

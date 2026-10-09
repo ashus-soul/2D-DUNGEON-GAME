@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dnk4kh023mcka" path="res://ruincity.gd" id="1_4xqxw"]
 [ext_resource type="Texture2D" uid="uid://bnx4iknaskk8o" path="res://ruincity/PNG/War1/Bright/War.png" id="2_4xqxw"]
-[ext_resource type="PackedScene" uid="uid://dbc6h3fwrkukc" path="res://level_2.tscn" id="2_nqsvg"]
+[ext_resource type="PackedScene" uid="uid://bcdx1t1pn1b4p" path="res://ruincity_boss_game.tscn" id="2_7u46h"]
 [ext_resource type="PackedScene" uid="uid://cs54ba4361we4" path="res://ui.tscn" id="4_3itbr"]
 [ext_resource type="Texture2D" uid="uid://cq5ot5tmjkt75" path="res://Tileset.png" id="5_hu0wr"]
 [ext_resource type="PackedScene" uid="uid://hawf3t1qoahj" path="res://player.tscn" id="6_mqhm1"]
@@ -1413,7 +1413,7 @@ size = Vector2(393, 1348)
 [node name="ruincity" type="Node2D" unique_id=910605102]
 position = Vector2(-3, 0)
 script = ExtResource("1_4xqxw")
-next_level = ExtResource("2_nqsvg")
+next_level = ExtResource("2_7u46h")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1952279514]
 
@@ -1514,9 +1514,11 @@ position = Vector2(1600, 310)
 position = Vector2(2599, 256)
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=1327892609]
+collision_layer = 0
+collision_mask = 130
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=599458979]
-position = Vector2(6540, -139)
+position = Vector2(6916, -241)
 shape = SubResource("RectangleShape2D_4xqxw")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

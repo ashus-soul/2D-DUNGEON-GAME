@@ -139,7 +139,7 @@ collision_layer = 0
 collision_mask = 130
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=68945318]
-position = Vector2(4911, 13)
+position = Vector2(8632, 43)
 shape = SubResource("RectangleShape2D_02w3y")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

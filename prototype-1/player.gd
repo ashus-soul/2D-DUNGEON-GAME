@@ -147,11 +147,16 @@ func safe_move_and_slide():
 	up_direction = Vector2.UP
 	if is_nan(velocity.x) or is_nan(velocity.y):
 		velocity = Vector2.ZERO
+	elif velocity.length() > 0.0 and velocity.length() < 0.0001:
+		velocity = Vector2.ZERO
 	if is_nan(up_direction.x) or is_nan(up_direction.y) or up_direction.length_squared() == 0:
 		up_direction = Vector2.UP
 	else:
 		up_direction = up_direction.normalized()
+	if floor_max_angle <= 0.0 or is_nan(floor_max_angle):
+		floor_max_angle = deg_to_rad(45.0)
 	move_and_slide()
+
 
 func handle_movement(delta):
 	if not is_on_floor():
@@ -266,7 +271,7 @@ func take_damage(amount):
 	
 	anim.modulate = Color(5.0, 0.3, 0.3, 1.0)
 	var flash_timer = get_tree().create_timer(0.15)
-	flash_timer.timeout.connect(func(): anim.modulate = Color(1, 1, 1, 1))
+	flash_timer.timeout.connect(func(): if is_instance_valid(anim): anim.modulate = Color(1, 1, 1, 1))
 
 	print("Player took damage! HP left: ", health)
 	if health <= 0:
@@ -281,6 +286,8 @@ func take_damage(amount):
 		sfx_death.play()
 		
 		await anim.animation_finished
+		if not is_inside_tree() or not is_instance_valid(self):
+			return
 		if SceneTransition:
 			SceneTransition.change_scene_file("res://deathmenu.tscn", 0.5)
 		else:

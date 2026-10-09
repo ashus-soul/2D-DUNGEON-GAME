@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkfor1im7epyw"]
+
+[ext_resource type="Script" uid="uid://b00mobilectrls" path="res://mobilecontrols.gd" id="1_mcscript"]
+[ext_resource type="Texture2D" uid="uid://dpukk1pmumo38" path="res://UI_GameAssets_Button/UI_GameAssets_Button/Button/lift_button.png" id="1_hjx1h"]
+[ext_resource type="Texture2D" uid="uid://fdf2j8gc2osj" path="res://UI_GameAssets_Button/UI_GameAssets_Button/Button/right_button.png" id="2_b2kgl"]
+[ext_resource type="Texture2D" uid="uid://cf5keolcjvskn" path="res://UI_GameAssets_Button/UI_GameAssets_Button/Button/jump_button.png" id="3_mq6yj"]
+[ext_resource type="Texture2D" uid="uid://bmbjrh131hexj" path="res://UI_GameAssets_Button/UI_GameAssets_Button/Button/sword_button.png" id="4_cncmv"]
+[ext_resource type="Texture2D" uid="uid://dybh13xrjhgwd" path="res://UI_GameAssets_Button/UI_GameAssets_Button/Button/health_button.png" id="5_q8cc3"]
+[ext_resource type="Texture2D" uid="uid://cpgq5ex4dthe5" path="res://UI_GameAssets_Button/UI_GameAssets_Button/Button/dash_button.png" id="6_52gmx"]
+
+[node name="mobilecontrols" type="CanvasLayer" unique_id=2087282855]
+script = ExtResource("1_mcscript")
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
+
+[node name="left" type="TouchScreenButton" parent="." unique_id=1468349853]
+position = Vector2(40.666664, 294)
+texture_normal = ExtResource("1_hjx1h")
+action = "left"
+
+[node name="right" type="TouchScreenButton" parent="." unique_id=1665520579]
+position = Vector2(175.33333, 299.3333)
+texture_normal = ExtResource("2_b2kgl")
+action = "right"
+
+[node name="jump" type="TouchScreenButton" parent="." unique_id=1984203385]
+position = Vector2(533.3333, 294)
+texture_normal = ExtResource("3_mq6yj")
+action = "jump"
+
+[node name="attack1" type="TouchScreenButton" parent="." unique_id=875959207]
+position = Vector2(660.6666, 300.66666)
+texture_normal = ExtResource("4_cncmv")
+action = "attack1"
+
+[node name="attack2" type="TouchScreenButton" parent="." unique_id=1783589092]
+position = Vector2(620, 215.33333)
+texture_normal = ExtResource("5_q8cc3")
+action = "attack2"
+
+[node name="roll" type="TouchScreenButton" parent="." unique_id=1447271907]
+position = Vector2(129.33333, 184)
+texture_normal = ExtResource("6_52gmx")
+action = "roll"
+
+[node name="interact" type="TouchScreenButton" parent="." unique_id=906916515]
+position = Vector2(70, 126)
+rotation = 1.5707964
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("6_52gmx")
+action = "interact"

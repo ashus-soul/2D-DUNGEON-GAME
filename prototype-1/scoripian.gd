@@ -40,7 +40,7 @@ func _ready():
 		attack_range = 130
 		speed = 400
 		scale = Vector2(5, 5)
-		hit_effect=Vector2(5,5)
+		hit_effect=Vector2(2,2)
 	
 	elif level_name=="jungle_night":
 		detection_range=1000

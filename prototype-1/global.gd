@@ -1,6 +1,7 @@
 extends Node
 
 var last_level_path: String = "res://level_1.tscn"
+var touch_controls_visible: bool = true
 
 var score: int = 0:
 	set(value):

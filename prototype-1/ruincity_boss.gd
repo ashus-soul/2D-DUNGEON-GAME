@@ -13,7 +13,7 @@ signal boss_died
 @export var heavy_attack_range: float = 200.0
 @export var heavy_attack_cooldown: float = 6.0
 
-@export var rock_throw_cooldown: float = 5.0
+@export var rock_throw_cooldown: float = 10.0
 @export var rock_scene: PackedScene = preload("res://rock_projectile.tscn")
 
 @export var hit_effect_scene: PackedScene = preload("res://hit_effect_boss.tscn")

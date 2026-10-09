@@ -1474,7 +1474,7 @@ offset_left = -150.0
 offset_top = -120.0
 offset_right = 150.0
 offset_bottom = -80.0
-theme_override_colors/font_color = Color(1.0, 0.85, 0.3, 1)
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 20
@@ -1511,7 +1511,7 @@ collision_layer = 0
 collision_mask = 130
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1063950254]
-position = Vector2(18995, -68)
+position = Vector2(10866, -9)
 shape = SubResource("RectangleShape2D_vvxqx")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

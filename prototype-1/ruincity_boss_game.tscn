@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bcdx1t1pn1b4p"]
 
 [ext_resource type="Script" uid="uid://bud52y656ifa" path="res://level_1.gd" id="1_hv2aq"]
-[ext_resource type="PackedScene" uid="uid://colw8skg85cpr" path="res://level_1_prolog.tscn" id="2_sb8en"]
+[ext_resource type="PackedScene" uid="uid://n1l74lr2oiio" path="res://thanks_v1_build.tscn" id="2_hv2aq"]
 [ext_resource type="Texture2D" uid="uid://dqe62mf6jnbp2" path="res://post acalypt/background 1/orig_big.png" id="3_l3u2g"]
 [ext_resource type="PackedScene" uid="uid://cs54ba4361we4" path="res://ui.tscn" id="4_1hygw"]
 [ext_resource type="PackedScene" uid="uid://cxky7m7tqmlgj" path="res://ruincity_boss.tscn" id="5_2js2s"]
@@ -19,7 +19,7 @@ size = Vector2(94.5, 932)
 
 [node name="RuincityBossGame" type="Node2D" unique_id=1634577227]
 script = ExtResource("1_hv2aq")
-next_level = ExtResource("2_sb8en")
+next_level = ExtResource("2_hv2aq")
 
 [node name="kingcrownbg" type="Sprite2D" parent="." unique_id=785930921]
 texture_filter = 1
@@ -34,13 +34,21 @@ texture_filter = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary" unique_id=1100874424]
 position = Vector2(8, 655)
+rotation = -0.017453292
 shape = SubResource("WorldBoundaryShape2D_bnmub")
 
 [node name="player" parent="." unique_id=398429457 instance=ExtResource("6_0k3a3")]
-position = Vector2(-395, -16)
+position = Vector2(-1456, 251)
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=730214675]
+zoom = Vector2(0.5, 0.5)
+limit_left = -1977
+limit_top = -9999801
+limit_right = 1823
+limit_bottom = 1300
 
 [node name="ruincity_boss" parent="." unique_id=438823423 instance=ExtResource("5_2js2s")]
-position = Vector2(33, 219)
+position = Vector2(1059, 447)
 
 [node name="WorldBoundary2" type="StaticBody2D" parent="." unique_id=159635451]
 texture_filter = 1
@@ -56,7 +64,7 @@ texture_filter = 1
 position = Vector2(2924, 39)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary3" unique_id=1580102584]
-position = Vector2(-1077, -63)
+position = Vector2(-1020, 303)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_j6du0")
 
@@ -66,12 +74,8 @@ collision_layer = 0
 collision_mask = 130
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1513572837]
-position = Vector2(1866, 33)
+position = Vector2(2057, 489)
 shape = SubResource("RectangleShape2D_5hph3")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1684265427]
-position = Vector2(-40, 177)
-zoom = Vector2(0.3, 0.3)
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

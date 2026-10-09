@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bud52y656ifa" path="res://level_1.gd" id="1_5hph3"]
 [ext_resource type="Texture2D" uid="uid://ly7aoi1j031h" path="res://free-vampires-locations-battle-background-pack/PNG/2/throne room.png" id="1_hn12h"]
-[ext_resource type="PackedScene" uid="uid://colw8skg85cpr" path="res://level_1_prolog.tscn" id="2_5hph3"]
+[ext_resource type="PackedScene" uid="uid://bttwc1oyjhcsg" path="res://background.tscn" id="2_5hph3"]
 [ext_resource type="PackedScene" uid="uid://cs54ba4361we4" path="res://ui.tscn" id="2_ihfcg"]
 [ext_resource type="PackedScene" uid="uid://cielyiiadalby" path="res://boss_1.tscn" id="4_ihfcg"]
 [ext_resource type="PackedScene" uid="uid://hawf3t1qoahj" path="res://player.tscn" id="5_rka8t"]
@@ -31,6 +31,7 @@ metadata/_edit_lock_ = true
 
 [node name="WorldBoundary" type="StaticBody2D" parent="." unique_id=1961277103]
 texture_filter = 1
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary" unique_id=1100874424]
 position = Vector2(8, 22)
@@ -56,7 +57,7 @@ shape = SubResource("RectangleShape2D_j6du0")
 
 [node name="Boss1" parent="." unique_id=173598566 instance=ExtResource("4_ihfcg")]
 texture_filter = 1
-position = Vector2(68.00001, -2.000002)
+position = Vector2(1348.9999, -25.999998)
 scale = Vector2(10, 10)
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=1794464945]
@@ -69,7 +70,7 @@ position = Vector2(1866, 33)
 shape = SubResource("RectangleShape2D_5hph3")
 
 [node name="player" parent="." unique_id=398429457 instance=ExtResource("5_rka8t")]
-position = Vector2(-395, -16)
+position = Vector2(-1627, 73)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1684265427]
 position = Vector2(-40, 177)

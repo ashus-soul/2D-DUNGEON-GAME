@@ -4,16 +4,30 @@ extends Node2D
 @onready var bgpress: AudioStreamPlayer2D = $bgpress
 @onready var static_sprite: Sprite2D = $buttonmanager/Sprite2D
 @onready var animated_sprite: AnimatedSprite2D = $buttonmanager/AnimatedSprite2D
+@onready var touch_controls_btn: Button = $buttonmanager/TOUCH_CONTROLS
 var button_type = null
 
 func _ready() -> void:
 	bg.play()
 	animated_sprite.visible = false
+	_update_touch_controls_button_text()
 	
 	# Keep only the hover connections (since they aren't connected via Editor)
 	for button in [$buttonmanager/START, $buttonmanager/QUIT]:
 		button.mouse_entered.connect(_on_button_hover)
 		button.mouse_exited.connect(_on_button_exit)
+
+func _update_touch_controls_button_text() -> void:
+	if touch_controls_btn:
+		if Global.touch_controls_visible:
+			touch_controls_btn.text = "Touch Controls: ON"
+		else:
+			touch_controls_btn.text = "Touch Controls: OFF"
+
+func _on_touch_controls_pressed() -> void:
+	Global.touch_controls_visible = !Global.touch_controls_visible
+	_update_touch_controls_button_text()
+
 func _on_button_hover() -> void:
 	static_sprite.visible = false
 	animated_sprite.visible = true

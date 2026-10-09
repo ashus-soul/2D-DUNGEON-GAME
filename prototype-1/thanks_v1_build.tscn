@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://n1l74lr2oiio"]
+
+[ext_resource type="Script" uid="uid://y8x1m1vwvmwk" path="res://thanks_v_1_build.gd" id="1_f1esf"]
+[ext_resource type="AudioStream" uid="uid://b2fngph8riybj" path="res://sound/happy-happy-happy-song.mp3" id="2_g8vqe"]
+
+[node name="Node2D" type="Node2D" unique_id=1475883919]
+script = ExtResource("1_f1esf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=666403729]
+offset_top = -1.0
+offset_right = 1253.0
+offset_bottom = 695.0
+color = Color(0.8194746, 0.8644953, 0.97439295, 1)
+
+[node name="Label" type="Label" parent="." unique_id=842180439]
+offset_right = 2800.0
+offset_bottom = 720.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "You’ve reached the edge of the current build. 
+More levels dropping soon."
+
+[node name="Button" type="Button" parent="." unique_id=1827390248]
+offset_left = 246.0
+offset_top = 204.0
+offset_right = 811.0
+offset_bottom = 508.0
+theme_override_font_sizes/font_size = 50
+text = "EXIT
+"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=100284714]
+stream = ExtResource("2_g8vqe")
+volume_db = 10.0
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -33,4 +33,3 @@ func _on_chat_detection_area_body_exited(body: Node2D) -> void:
 func _on_dialogchat_dialog_finished() -> void:
 	is_chatting = false
 	$dialogchat.visible = false
-
