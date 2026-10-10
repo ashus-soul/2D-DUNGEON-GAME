@@ -40,13 +40,6 @@ shape = SubResource("WorldBoundaryShape2D_bnmub")
 [node name="player" parent="." unique_id=398429457 instance=ExtResource("6_0k3a3")]
 position = Vector2(-1456, 251)
 
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=730214675]
-zoom = Vector2(0.5, 0.5)
-limit_left = -1977
-limit_top = -9999801
-limit_right = 1823
-limit_bottom = 1300
-
 [node name="ruincity_boss" parent="." unique_id=438823423 instance=ExtResource("5_2js2s")]
 position = Vector2(1059, 447)
 
@@ -76,6 +69,14 @@ collision_mask = 130
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1513572837]
 position = Vector2(2057, 489)
 shape = SubResource("RectangleShape2D_5hph3")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=730214675]
+position = Vector2(-1707, 869)
+zoom = Vector2(0.3, 0.3)
+limit_left = -1977
+limit_top = -9999801
+limit_right = 1823
+limit_bottom = 1300
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
